@@ -27,7 +27,13 @@ It is designed to simplify web service discovery and vhost setups on clustered h
   - value: `"http://10.0.0.1:8080"`
 - Multiple targets for a single vhost, which will be accessed in a round-robin fashion
 
+# Install
+
+`npm install etcd-vhost`
+
 # Usage
+
+## Starting the proxy
 
 `npm start --port=8080 --etcd-hosts=127.0.0.1:4001`
 
@@ -36,6 +42,16 @@ It is designed to simplify web service discovery and vhost setups on clustered h
 - `--port`: port number the server listens on
 - `--etcd-hosts`: a comma separated list of etcd servers in the form of `<address>:<port>`
 - `--uri`: the base directory key for the etcd configurations, default is `/etcd_vhost/`
+
+## Registering a new virtual host on etcd
+
+Create a virtual host www.example.com that points to http://10.0.0.1:8080:
+
+```
+core@coreos01 ~ $ etcdctl set /etcd_vhost/vhosts/www.example.com/10.0.0.1:8080 "http://10.0.0.1:8080"
+http://10.0.0.1:8080
+```
+
 
 # Running tests
 

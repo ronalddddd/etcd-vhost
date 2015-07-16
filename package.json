@@ -1,6 +1,6 @@
 {
-  "name": "etcd-proxy",
-  "version": "0.1.0",
+  "name": "etcd-vhost",
+  "version": "0.1.1",
   "description": "A virtual-hosting proxy configured using etcd.",
   "main": "index.js",
   "scripts": {

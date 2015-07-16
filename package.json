@@ -1,0 +1,31 @@
+{
+  "name": "etcd-proxy",
+  "version": "0.0.0",
+  "description": "A vhost proxy that uses etcd to store vhost entries. ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "keywords": [
+    "virtual",
+    "hosting",
+    "vhost",
+    "proxy",
+    "etcd",
+    "http"
+  ],
+  "author": "Ronald Ng",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.9.33",
+    "http-proxy": "^1.11.1",
+    "lodash": "^3.10.0",
+    "node-etcd": "^4.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5",
+    "request": "^2.58.0"
+  }
+}

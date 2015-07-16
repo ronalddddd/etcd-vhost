@@ -27,6 +27,16 @@ It is designed to simplify web service discovery and vhost setups on clustered h
   - value: `"http://10.0.0.1:8080"`
 - Multiple targets for a single vhost, which will be accessed in a round-robin fashion
 
+# Usage
+
+`npm start --port=8080 --etcd-hosts=127.0.0.1:4001`
+
+## Options:
+
+- `--port`: port number the server listens on
+- `--etcd-hosts`: a comma separated list of etcd servers in the form of `<address>:<port>`
+- `--uri`: the base directory key for the etcd configurations, default is `/etcd_vhost/`
+
 # Running tests
 
 - make sure a local etcd endpoint localhost:4001 is accessible

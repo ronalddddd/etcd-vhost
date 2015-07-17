@@ -4,19 +4,19 @@ A virtual-hosting proxy configured using etcd.
 It is designed to simplify web service discovery and vhost setups on clustered hosts like CoreOS.
 
 ```
-                          Load Balancer 
-                               ||
-                        -----------------
-                        |               |
-                        V               V
-                  etcd-vhost          etcd-vhost
-                        |               |
-                        -----------------
-                               ||
-                        -----------------
-                        |               |
-                        V               V
-                  Web App 1           Web App 2
+          Load Balancer
+               ||
+        -----------------
+        |               |
+        V               V
+  etcd-vhost          etcd-vhost
+        |               |
+        -----------------
+               ||
+        -----------------
+        |               |
+        V               V
+  Web App 1           Web App 2
 
 ```
 
@@ -27,17 +27,24 @@ It is designed to simplify web service discovery and vhost setups on clustered h
   - value: `"http://10.0.0.1:8080"`
 - Multiple targets for a single vhost, which will be accessed in a round-robin fashion
 
-# Install
-
-`npm install etcd-vhost`
-
 # Usage
 
-## Starting the proxy
+You can run the vhost proxy as a docker container or as a stand-alone node app.
+The docker container will be run with the argument `--etcd-hosts=172.17.42.1:4001`, which is the default docker host on the docker0 interface.
 
-`npm start --port=8080 --etcd-hosts=127.0.0.1:4001`
+## Running the server with Docker
 
-## Options:
+`docker run ronalddddd/etcd-vhost`
+
+## Running the server with NPM
+
+        # Install
+        npm install etcd-vhost
+
+        # Run
+        npm start --port=8080 --etcd-hosts=127.0.0.1:4001
+
+## Options (applies to both methods above):
 
 - `--port`: port number the server listens on
 - `--etcd-hosts`: a comma separated list of etcd servers in the form of `<address>:<port>`
@@ -60,9 +67,11 @@ http://10.0.0.1:8080
 
 # TODO:
 
-- start script
-- configurable etcd endpoint
-- configurable etcd base uri
 - health check and auto-remove unhealthy vhost targets
 - separate presence daemon to add docker containers to vhost entries based on env variables
 - support web sockets
+
+# Related Readings
+
+- [etcd](https://coreos.com/etcd/)
+- [etcd - Reading and Writing from Inside a Container](https://coreos.com/etcd/docs/latest/getting-started-with-etcd.html)

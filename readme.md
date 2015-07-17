@@ -68,10 +68,13 @@ http://10.0.0.1:8080
 # TODO:
 
 - health check and auto-remove unhealthy vhost targets
-- separate presence daemon to add docker containers to vhost entries based on env variables
+- presence daemon to add vhost entries using container env vars found with `docker inspect`
 - support web sockets
 
 # Related Readings
 
+- [docker repo](https://registry.hub.docker.com/u/ronalddddd/etcd-vhost/)
+- [npm repo](https://www.npmjs.com/package/etcd-vhost)
+- [GitHub repo](https://github.com/ronalddddd/etcd-vhost)
 - [etcd](https://coreos.com/etcd/)
 - [etcd - Reading and Writing from Inside a Container](https://coreos.com/etcd/docs/latest/getting-started-with-etcd.html)

@@ -71,7 +71,7 @@ http://10.0.0.1:8080
 - presence daemon to add vhost entries using container env vars found with `docker inspect`
 - support web sockets
 
-# Related Readings
+# Related Links
 
 - [docker repo](https://registry.hub.docker.com/u/ronalddddd/etcd-vhost/)
 - [npm repo](https://www.npmjs.com/package/etcd-vhost)
